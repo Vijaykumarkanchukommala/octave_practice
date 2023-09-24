@@ -14,7 +14,7 @@ Fc = 50;                       % hertz
 x = sin(2*pi*Fc*t);
 
 %Fourier Transform:
-y = fftshift(fft(x));
+y = fftshift(fft(x,N));
 
 %%Plot the spectrum:
 figure;
@@ -24,6 +24,6 @@ xlabel('Time');
 ylabel('amplitude');
 title('Signal');
 subplot(2,1,2) 
-plot(f,abs(y)/N);
+plot(f,20*log10(abs(y)));
 xlabel('Frequency (in hertz)');
 title('Magnitude Response');
